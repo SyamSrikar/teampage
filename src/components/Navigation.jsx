@@ -12,7 +12,7 @@ const Navigation = () => {
       heads:[
         {
           "image": "./pictures/Core Team/Aakash.jpg",
-          "name": "Aakash",
+          "name": "Aakash Manohar Indugula",
           "domain": "",
           "role": "President",
           "linkedin" : "#"
