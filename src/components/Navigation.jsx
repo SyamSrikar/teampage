@@ -437,6 +437,7 @@ const [isSelect,setSelected]=useState(false)
           {valueParent.map((c) => <a className={currentValueParent.heading===c.heading?'active-parent':'inactive'} onClick={() => setCurrentValueParent(c)}>{c.heading}</a>)}
         </div>}
         
+        {!isMobile && <div className='spacer'></div>}
         {isMobile && isMenu && <div className='navigation-links-mobile'>
           {valueParent.map((c) => <a className={currentValueParent.heading===c.heading?'active-parent':'inactive'} onClick={() => {setCurrentValueParent(c);setIsMenu(!isMenu);setSelected(!isSelect);}}>
             {currentValueParent.heading===c.heading?
