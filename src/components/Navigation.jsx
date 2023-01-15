@@ -367,7 +367,7 @@ const Navigation = () => {
         heading:"Finance and Legal",
         heads:[
           {
-            "image": "./pictures/finance and Legal/Head-Riya Sethia.jpg",
+            "image": "./pictures/Finance and Legal/Head-Riya Sethia.jpg",
             "name": "Riya Sethia",
             "domain": "Finance and Legal",
             "role": "Head of Finance and Legal",
@@ -376,21 +376,21 @@ const Navigation = () => {
         ],
         leads:[
           {
-            "image": "./pictures/finance and Legal/Lead-P V Abhinav Sai.jpg",
+            "image": "./pictures/Finance and Legal/Lead-P V Abhinav Sai.jpg",
             "name": "P V Abhinav Sai",
             "domain": "Finance and Legal",
             "role": "Lead of Finance and Legal",
             "linkedin" : "#"
           },
           {
-            "image": "./pictures/finance and Legal/Lead-Mamidipaka Venkata Ajay.jpg",
+            "image": "./pictures/Finance and Legal/Lead-Mamidipaka Venkata Ajay.jpg",
             "name": "Mamidipaka Venkata Ajay",
             "domain": "Finance and Legal",
             "role": "Lead of Finance and Legal",
             "linkedin" : "#"
           },
           {
-            "image": "./pictures/finance and Legal/Lead-Utkarsh Aluru.jpg",
+            "image": "./pictures/Finance and Legal/Lead-Utkarsh Aluru.jpg",
             "name": "Utkarsh Aluru",
             "domain": "Finance and Legal",
             "role": "Lead of Finance and Legal",
