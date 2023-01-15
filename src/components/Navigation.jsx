@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import Profiles from './Profiles';
+import {FaBars,FaRegWindowClose,FaCircle} from "react-icons/fa";
 
 
 const Navigation = () => {
@@ -401,13 +402,53 @@ const Navigation = () => {
   ]
 
   const [currentValueParent, setCurrentValueParent] = React.useState(valueParent[0]);
+  const [width, setWidth] = useState(window.innerWidth);
+
+function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+}
+React.useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+        window.removeEventListener('resize', handleWindowSizeChange);
+    }
+}, []);
+
+const [isMobile,setIsMobile]=useState(false)
+React.useEffect(() => {
+  setIsMobile(width<768);
+}, [width])
+
+const [isMenu,setIsMenu]=useState(false)
+
+const [isSelect,setSelected]=useState(false)
+
   return (
     <>
-      <div className='navigation'>
-        <div className='navigation-links'>
+      <div className={isMobile?'navigation-mobile':'navigation-desktop'}>
+        {isMobile &&<div className='check'>
+            {!isSelect?
+              <FaBars onClick={() => {setIsMenu(!isMenu);setSelected(!isSelect)}} color='white' size={'25px'}/>:
+              <FaRegWindowClose onClick={() => {setIsMenu(!isMenu);setSelected(!isSelect)}} color='white' size={'30px'}/>
+            }
+        </div>}
+
+        {!isMobile &&<div className='navigation-links-desktop'>
           {valueParent.map((c) => <a className={currentValueParent.heading===c.heading?'active-parent':'inactive'} onClick={() => setCurrentValueParent(c)}>{c.heading}</a>)}
-        </div>
-        <div className='profiles'><Profiles valueParent={currentValueParent} /></div>
+        </div>}
+        
+        {isMobile && isMenu && <div className='navigation-links-mobile'>
+          {valueParent.map((c) => <a className={currentValueParent.heading===c.heading?'active-parent':'inactive'} onClick={() => {setCurrentValueParent(c);setIsMenu(!isMenu);setSelected(!isSelect);}}>
+            {currentValueParent.heading===c.heading?
+            <div className='active'>
+              <FaCircle color='white' size={'10px'}/>
+              {c.heading}
+              <FaCircle color='white' size={'10px'}/>
+            </div>:c.heading}
+          </a>)}
+        </div>}
+        {isMobile&& !isMenu && <div className='title'><p>{currentValueParent.heading}</p></div>}
+        {!isMenu && <div className='profiles'><Profiles valueParent={currentValueParent} /></div>}
       </div>
     </>
   );
