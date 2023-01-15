@@ -59,7 +59,7 @@ const Navigation = () => {
       heading:'Events',
       heads:[
         {
-          "image": "./pictures/Events/Head-Ogrima Mukherjee.jpg",
+          "image": "./pictures/Events/head-Ogrima Mukherjee.jpg",
           "name": "Ogrima Mukherjee",
           "domain": "Events",
           "role": "Head Of Culturals",
@@ -124,7 +124,7 @@ const Navigation = () => {
         ],
         leads: [
           {
-            "image": "./pictures/Hospitality/Lead-k.Thanmai Nookambhika.jpg",
+            "image": "./pictures/Hospitality/Lead-K.Thanmai Nookambhika.jpg",
             "name": "k.Thanmai Nookambhika",
             "domain": "Hospitality",
             "role": "Lead of Hospitality",
